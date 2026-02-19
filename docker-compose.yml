@@ -5,7 +5,7 @@ services:
     image: redis:6.2-alpine
     restart: always
     ports:
-      - '6380:6379'
+      - '6380:6380'
     command: redis-server --save 20 1 --loglevel warning --requirepass 123456
     volumes: 
       - redis:/data
@@ -57,5 +57,3 @@ volumes:
     driver: local
   mongodb:
     driver: local
-
-
