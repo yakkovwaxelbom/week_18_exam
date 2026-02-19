@@ -15,6 +15,8 @@ def main():
 
     for alert in data:
         priority = PriorityLogic.get_priority(alert)
+        alert['priority'] = priority
+
         RedisMsgQueue.push_queue(priority, TTL, alert)
 
 
