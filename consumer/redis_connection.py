@@ -2,7 +2,6 @@ import redis
 from pydantic_settings import BaseSettings
 from pydantic import Field
 
-TIMEOUT = 3
 
 class RedisConfig(BaseSettings):
     REDIS_HOST: str = Field('127.0.0.1', alias='host') 

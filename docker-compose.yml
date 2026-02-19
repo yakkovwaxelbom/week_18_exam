@@ -20,6 +20,38 @@ services:
     volumes:
       - mongodb:/data/db
 
+
+  analytics-api:
+    build:
+      context: .
+      dockerfile: analytics-api/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+
+  producer:
+    build:
+      context: .
+      dockerfile: producer/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+      - redis
+
+
+  consumer:
+    build:
+      context: .
+      dockerfile: consumer/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+      - redis
+
+
 volumes:
   redis:
     driver: local
