@@ -4,14 +4,14 @@ from pydantic import Field
 from uuid import uuid4
 
 class RedisConfig(BaseSettings):
-    REDIS_HOST: str = Field('127.0.0.1', alias='host') 
+    REDIS_HOST: str = Field('redis', alias='host') 
     REDIS_PORT: int = Field(6380, alias='port')
     REDIS_DB: int = Field(0, alias='db')
     REDIS_PASSWORD: str = Field('123456', alias='password')
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    # class Config:
+    #     env_file = ".env"
+    #     env_file_encoding = "utf-8"
 
 
 class RedisMsgQueue:

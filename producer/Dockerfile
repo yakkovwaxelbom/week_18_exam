@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY producer/requirements.txt .
 COPY .env .
-COPY data .
+COPY data/ .
 COPY producer/ .
 
 RUN pip install --no-cache-dir -r requirements.txt

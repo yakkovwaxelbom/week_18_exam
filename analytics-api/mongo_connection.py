@@ -6,12 +6,12 @@ from pydantic import Field
 
 
 class MongoConfig(BaseSettings):
-    MONGO_URI: str = Field('mongodb://localhost:27017') 
+    MONGO_URI: str = Field('mongodb://mongodb:27017') 
     MONGO_DB: str = Field('dev')
     
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    # class Config:
+    #     env_file = ".env"
+    #     env_file_encoding = "utf-8"
 
 
 

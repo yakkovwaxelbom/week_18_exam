@@ -9,7 +9,7 @@ def main():
 
     RedisMsgQueue.connect()
 
-    with open('data/border_alerts.json') as f:
+    with open('border_alerts.json') as f:
 
         data = json.load(f)
 
